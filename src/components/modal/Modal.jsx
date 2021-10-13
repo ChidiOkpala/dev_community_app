@@ -9,7 +9,7 @@ export const CustomModal = ({
   const formInitState = {
     name: '',
     description: ''
-  }
+  };
   const [formState, setFormState] = useState(formInitState);
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -49,7 +49,7 @@ export const CustomModal = ({
         />
         <textarea
           rows="4"
-          class="form-control mt-4"
+          className="form-control mt-4"
           aria-label="With textarea"
           placeholder="Channel Description"
           onChange={(event) => handleDescChange(event)}
