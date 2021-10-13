@@ -63,6 +63,8 @@
 
 .aside-content {
   padding: 25px 28px;
+  max-height: calc(100vh - 135px);
+  overflow: scroll;
 }
 
 .aside-footer {

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 import { MembersList } from '../membersList/MembersList';
 import { ChannelIntro } from '../channelIntro/ChannelIntro';
@@ -9,28 +9,26 @@ import { CustomModal } from '../modal/Modal';
 import './MenuBar.css';
 
 export const MenuBar = ({ className }) => {
-  const [channels, setChannels] = useState(false);
+  const [showChannels, setShowChannels] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   return (
     <aside className={`aside-section-wrapper col-sm-3 h-100 ${className || ''}`}>
       <div className="aside-header header d-flex">
         {
-          channels
+          showChannels
             ? <div className="channels-header-wrapper">
               <span>Channels</span>
               <button
-                data-bs-toggle="modal"
                 className="plus-wrapper"
-                data-bs-target="#staticBackdrop"
                 onClick={() => setShowModal(true)}
               >
                 <PlusSign />
               </button>
             </div>
-            : <div className="arrow-wrapper" onClick={() => (setChannels(true))}>
+            : <div className="arrow-wrapper" onClick={() => setShowChannels(true)}>
               <div className="arrow"><ArrowLeft /></div>
-              <span>All channels</span>
+              <span>All Channels</span>
             </div>
         }
       </div>
@@ -41,10 +39,13 @@ export const MenuBar = ({ className }) => {
       />
       <div className="aside-content">
         {
-          channels
+          showChannels
             ? <div>
               <SearchInput onSubmit={(value) => console.log(value)} />
-              <ChannelsList channelsList={channelsList} onSelect={(channel) => setChannels(false)} />
+              <ChannelsList
+                channelsList={channelsList}
+                onSelect={(channel) => setShowChannels(false)}
+              />
             </div>
             : <>
               <ChannelIntro />

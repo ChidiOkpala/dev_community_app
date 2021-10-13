@@ -5,7 +5,7 @@ import { ChatInput } from './components/chatInput/ChatInput';
 import { MenuBar } from './components/menuBar/MenuBar';
 import './App.css';
 
-function App() {
+const App = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   return (
@@ -89,4 +89,4 @@ const CloseIcon = () => (
     <path fillRule="evenodd" clipRule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z" fill="#ffffff"/>
     <path fillRule="evenodd" clipRule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z" fill="#ffffff"/>
   </svg>
-)
+);
