@@ -120,6 +120,7 @@
 #dropdown-menu .logout,
 #dropdown-menu .logout:hover {
   color: #EB5757;
+  padding-top: 15px;
 }
 
 #dropdown-menu a:hover {
