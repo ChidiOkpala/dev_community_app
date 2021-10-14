@@ -7,6 +7,7 @@ import { ChannelsList } from '../channelsList/ChannelsList'
 import { SearchInput } from '../searchInput/SearchInput';
 import { CustomModal } from '../modal/Modal';
 import './MenuBar.css';
+import { Dropdown } from 'react-bootstrap';
 
 export const MenuBar = ({ className }) => {
   const [showChannels, setShowChannels] = useState(false);
@@ -54,7 +55,22 @@ export const MenuBar = ({ className }) => {
         }
       </div>
       <div className="mt-auto aside-footer">
-        <Member extra {...memberList[0]} onClick={() => {}} />
+        <Dropdown>
+          <Dropdown.Toggle id="dropdown-basic">
+            <Member extra {...memberList[0]} />
+          </Dropdown.Toggle>
+          <Dropdown.Menu id="dropdown-menu">
+            <Dropdown.Item href="#">Profile</Dropdown.Item>
+            <Dropdown.Item href="#">Tweeter</Dropdown.Item>
+            <hr/>
+            <Dropdown.Item
+              className="logout"
+              onClick={() => console.log('logout')}
+            >
+              Logout
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       </div>
     </aside>
   );

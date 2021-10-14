@@ -4,13 +4,12 @@ export const Member = ({
   image,
   name,
   extra,
-  onClick,
 }) => (
   <div className="member-wrapper position-relative d-flex align-items-center">
     <img src={image} alt={name} />
     <div className="name">{name}</div>
     {extra && (
-      <div className="position-absolute end-0" onClick={onClick}>
+      <div className="position-absolute end-0">
         <ArrowDown />
       </div>
     )}
